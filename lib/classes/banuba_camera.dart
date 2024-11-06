@@ -17,8 +17,12 @@ class VideoEditingSDK {
 
     final config = FeaturesConfigBuilder()
         .setDraftsConfig(DraftsConfig.fromOption(DraftsOption.auto))
-        .setGifPickerConfig(const GifPickerConfig(
-            giphyApiKey: "1L6KWZUkZzp0O74FO2HNt5VfL8h6d1d3"))
+        .setGifPickerConfig(
+          const GifPickerConfig(
+            giphyApiKey: "1L6KWZUkZzp0O74FO2HNt5VfL8h6d1d3",
+          ),
+        )
+        // .setAiClipping(AiClipping(audioDataUrl: audioDataUrl, audioTracksUrl: audioTracksUrl))
         // .setAiCaptions(...)
         // ...
         .build();

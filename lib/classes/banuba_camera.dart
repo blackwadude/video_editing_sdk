@@ -16,30 +16,21 @@ class VideoEditingSDK {
     // Specify your Config params in the builder below
 
     final config = FeaturesConfigBuilder()
-        .setDraftsConfig(DraftsConfig.fromOption(DraftsOption.auto))
+        .setDraftsConfig(
+          DraftsConfig.fromOption(DraftsOption.auto),
+        )
         .setGifPickerConfig(
           const GifPickerConfig(
             giphyApiKey: "1L6KWZUkZzp0O74FO2HNt5VfL8h6d1d3",
           ),
         )
+        .setAudioBrowser(
+          AudioBrowser.fromSource(AudioBrowserSource.soundstripe),
+        )
         // .setAiClipping(AiClipping(audioDataUrl: audioDataUrl, audioTracksUrl: audioTracksUrl))
         // .setAiCaptions(...)
         // ...
         .build();
-
-    // Export data example
-
-    // const exportData = ExportData(exportedVideos: [
-    //   ExportedVideo(
-    //       fileName: "export_HD",
-    //       videoResolution: VideoResolution.hd720p
-    //   )],
-    //     watermark: Watermark(
-    //        imagePath: "assets/watermark.png",
-    //        alignment: WatermarkAlignment.topLeft
-    //     )
-    // );
-
     try {
       exportResult =
           await _veSdkFlutterPlugin.openCameraScreen(_licenseToken, config);

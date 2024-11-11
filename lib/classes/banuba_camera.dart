@@ -27,6 +27,20 @@ class VideoEditingSDK {
         .setAudioBrowser(
           AudioBrowser.fromSource(AudioBrowserSource.soundstripe),
         )
+        .setAiClipping(
+          const AiClipping(
+            audioDataUrl:
+                "https://ve-autocut-v2-ap-south-1.s3.ap-south-1.amazonaws.com/index.zip",
+            audioTracksUrl: "https://soundstripe-proxy.banuba.net/v1/songs",
+          ),
+        )
+        .setAiCaptions(
+          const AiCaptions(
+              uploadUrl: "https://internal.transcribe.banuba.net",
+              transcribeUrl:
+                  "https://rest.internal.transcribe.banuba.net/transcribe/v1/status",
+              apiKey: "CheiYaaphoK6eungecheec4eingeik9shaijiech"),
+        )
         // .setAiClipping(AiClipping(audioDataUrl: audioDataUrl, audioTracksUrl: audioTracksUrl))
         // .setAiCaptions(...)
         // ...

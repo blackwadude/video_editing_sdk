@@ -45,8 +45,17 @@ class VideoEditingSDK {
     dynamic exportResult;
 
     final config = FeaturesConfigBuilder()
-        // .setAudioBrowser(...)
-        // ...
+        .setDraftsConfig(
+          DraftsConfig.fromOption(DraftsOption.auto),
+        )
+        .setGifPickerConfig(
+          const GifPickerConfig(
+            giphyApiKey: "1L6KWZUkZzp0O74FO2HNt5VfL8h6d1d3",
+          ),
+        )
+        .setAudioBrowser(
+          AudioBrowser.fromSource(AudioBrowserSource.soundstripe),
+        )
         .build();
     try {
       exportResult = await _veSdkFlutterPlugin.openPipScreen(
@@ -62,8 +71,17 @@ class VideoEditingSDK {
       List<String> sourceVideoPathList) async {
     dynamic exportResult;
     final config = FeaturesConfigBuilder()
-        // .setDraftConfig(...)
-        //...
+        .setDraftsConfig(
+          DraftsConfig.fromOption(DraftsOption.auto),
+        )
+        .setGifPickerConfig(
+          const GifPickerConfig(
+            giphyApiKey: "1L6KWZUkZzp0O74FO2HNt5VfL8h6d1d3",
+          ),
+        )
+        .setAudioBrowser(
+          AudioBrowser.fromSource(AudioBrowserSource.soundstripe),
+        )
         .build();
     try {
       exportResult = await _veSdkFlutterPlugin.openTrimmerScreen(
